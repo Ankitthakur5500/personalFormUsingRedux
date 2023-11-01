@@ -2,7 +2,7 @@
 import React from 'react'
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { submit } from '../slices/page';
+import { setFname, setLname } from '../slices/page';
 import Link from 'next/link';
 
 export default function page() {
@@ -24,7 +24,8 @@ export default function page() {
     alert("Form Submitted Successfully!!!");
     event.preventDefault();
     console.log("dispatch",firstName);
-    dispatch(submit(firstName));
+    dispatch(setFname(firstName));
+    dispatch(setLname(lastName));
   } 
   return (
     <div className='mainform'>

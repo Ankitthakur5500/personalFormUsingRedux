@@ -1,12 +1,16 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { getFname,getLname } from './slices/page'
 
 export default function Display() {
-    const abc = useSelector((state)=>state.user)
-    console.log(abc)
+    const abc = useSelector(getFname)
+    const bc = useSelector(getLname)
+    console.log(abc,bc)
   return (
     <div>
-       <span>{abc.user}</span>
+       <span>{abc}</span>
+       <span>{bc}</span>
+       {/* <span>{bc.ankit}</span> */}
     </div>
   )
 }
