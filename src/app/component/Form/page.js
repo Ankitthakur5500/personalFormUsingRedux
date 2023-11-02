@@ -2,7 +2,7 @@
 import React from 'react'
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { setFname, setLname } from '../slices/page';
+import { setAdds,setFname, setLname ,setMNo,setCtry,setState,setPC} from '../slices/page';
 import Link from 'next/link';
 
 export default function page() {
@@ -15,17 +15,17 @@ export default function page() {
   const [stat,setStat] = useState("");
   const [pin,setPin] = useState("");
 
-  // const data = [firstName,lastName,address,mobileNumber,country,stat,pin];
-  // console.log("Arraydata",data);
-  // console.log("Bdata",data.firstName);
-  
-
   const formSubmitted=(event)=>{
     alert("Form Submitted Successfully!!!");
     event.preventDefault();
     console.log("dispatch",firstName);
     dispatch(setFname(firstName));
     dispatch(setLname(lastName));
+    dispatch(setAdds(address));
+    dispatch(setMNo(mobileNumber));
+    dispatch(setCtry(country));
+    dispatch(setState(stat));
+    dispatch(setPC(pin));
   } 
   return (
     <div className='mainform'>
