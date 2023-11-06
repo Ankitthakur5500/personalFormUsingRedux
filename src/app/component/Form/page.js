@@ -2,8 +2,9 @@
 import React from 'react'
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { setAdds,setFname, setLname ,setMNo,setCtry,setState,setPC} from '../slices/page';
+// import { setAdds,setFname, setLname ,setMNo,setCtry,setState,setPC} from '../slices/page';
 import Link from 'next/link';
+import {setData} from '../slices/page';
 
 export default function page() {
   const dispatch = useDispatch();
@@ -15,17 +16,21 @@ export default function page() {
   const [stat,setStat] = useState("");
   const [pin,setPin] = useState("");
 
+  const data = {fname:firstName,lname:lastName,Address:address,Mobile:mobileNumber,Country:country,State:stat,Pincode:pin};
+
+
   const formSubmitted=(event)=>{
     alert("Form Submitted Successfully!!!");
     event.preventDefault();
     console.log("dispatch",firstName);
-    dispatch(setFname(firstName));
-    dispatch(setLname(lastName));
-    dispatch(setAdds(address));
-    dispatch(setMNo(mobileNumber));
-    dispatch(setCtry(country));
-    dispatch(setState(stat));
-    dispatch(setPC(pin));
+    // dispatch(setFname(firstName));
+    // dispatch(setLname(lastName));
+    // dispatch(setAdds(address));
+    // dispatch(setMNo(mobileNumber));
+    // dispatch(setCtry(country));
+    // dispatch(setState(stat));
+    // dispatch(setPC(pin));
+    dispatch(setData(data));
   } 
   return (
     <div className='mainform'>
