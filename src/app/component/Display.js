@@ -6,7 +6,6 @@ import { removeUser } from './slices/page'
 
 export default function Display() {
     const ankit = useSelector(getData)
-    console.log("**",ankit)
     const dispatch = useDispatch();
   
     const deleteUser = (id)=>{
@@ -18,11 +17,11 @@ export default function Display() {
           <div  className="note" key={id}>
             First Name:{data.fname}<br/>
             Last Name:{data.lname}<br/> 
-            Address:{data.add}<br/>
-            Mobile Number:{data.mNo}<br/>
-            Country:{data.Ctry}<br/>
-            State:{data.stat}<br/>
-            Pincode:{data.pC}<br/>
+            Address:{data.Address}<br/>
+            Mobile Number:{data.Mobile}<br/>
+            Country:{data.Country}<br/>
+            State:{data.State}<br/>
+            Pincode:{data.Pincode}<br/>
             <button onClick={()=>deleteUser(id)}>Delete</button>
           </div>
        ))}
